@@ -1,0 +1,67 @@
+.main {
+  max-width: 1190px;
+  width: 100%;
+  padding: 3px 15px;
+  @include flex(flex-start, flex-start, column);
+}
+
+.wrapper {
+  margin-top: 20px;
+  width: 100%;
+  @include flex(flex-start, flex-start, column);
+  gap: 20px;
+}
+
+.back_button {
+  padding: 10px;
+  @include flex(center, flex-start, row);
+  gap: 11px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  border-radius: 10px;
+}
+
+.back_img {
+  width: 24px;
+  height: 24px;
+
+  background-image: url('/src/assets/images/back-small.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.back_text {
+  font-size: 16px;
+  color: $color_02;
+}
+
+@media screen and (min-width: 800px) {
+  .wrapper {
+    flex-direction: row;
+    padding: 0 15px;
+    gap: 40px;
+    margin-top: 0;
+  }
+  .main {
+    padding: 10px 0;
+    gap: 30px;
+  }
+  .back_text {
+    font-size: 20px;
+  }
+
+  .back_button {
+    padding: 15px;
+    gap: 13px;
+  }
+
+  .back_img {
+    background-image: url('/src/assets/images/back-large.svg');
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .back_button:hover {
+    background-color: $color_04;
+  }
+}

@@ -1,0 +1,113 @@
+.wrapper {
+  padding: 16px;
+  background-color: $color_06;
+  @include flex(flex-start, flex-start, column);
+  gap: 16px;
+  border-radius: 16px;
+}
+
+.avatar_wrapper {
+  width: 130px;
+  height: 120px;
+  @include flex(center, center, column);
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.avatar {
+  width: 100%;
+  height: auto;
+}
+
+.avatar_inActive {
+  width: 100%;
+  height: auto;
+  filter: grayscale(100%);
+}
+
+.description_wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  @include flex(flex-start, space-between, column);
+  gap: 12px;
+  flex: 1;
+}
+
+.wrapper_userInfo {
+  @include flex(flex-start, space-between, column);
+  gap: 4px;
+}
+
+.user_name {
+  font-size: 18px;
+  color: $color_accent;
+}
+
+.user_name_inActive {
+  font-size: 18px;
+  color: $color_02;
+}
+
+.company_name {
+  font-size: 14px;
+  color: $color_02;
+}
+
+.city_name {
+  font-size: 10px;
+  color: $color_03;
+}
+
+.button {
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+
+  background-image: url('/src/assets/images/userBtn-small.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: background-image 0.3s ease;
+}
+
+@media screen and (min-width: 800px) {
+  .wrapper {
+    flex-direction: row;
+    padding: 24px;
+    gap: 20px;
+  }
+
+  .avatar_wrapper {
+    width: 112px;
+    height: 120px;
+  }
+
+  .user_name {
+    font-size: 20px;
+  }
+
+  .company_name {
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  .city_name {
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  .button {
+    background-image: url('/src/assets/images/userBtn-large.svg');
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .button:hover {
+    background-image: url('/src/assets/images/userBtn-large-hover.svg');
+  }
+}
