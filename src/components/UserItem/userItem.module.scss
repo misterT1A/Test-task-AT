@@ -19,6 +19,12 @@
   height: auto;
 }
 
+.avatar_inActive {
+  width: 100%;
+  height: auto;
+  filter: grayscale(100%);
+}
+
 .description_wrapper {
   position: relative;
   width: 100%;
@@ -39,16 +45,22 @@
   color: $color_accent;
 }
 
-.company_name {
-  font-size: 10px;
+.user_name_inActive {
+  font-size: 18px;
   font-weight: 600;
-  color: $color_03;
+  color: $color_02;
 }
 
-.city_name {
+.company_name {
   font-size: 14px;
   font-weight: 600;
   color: $color_02;
+}
+
+.city_name {
+  font-size: 10px;
+  font-weight: 600;
+  color: $color_03;
 }
 
 .button {

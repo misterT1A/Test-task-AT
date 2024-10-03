@@ -22,14 +22,23 @@ export interface IUser {
   };
 }
 
+export interface IUsersList {
+  users: IUser[];
+  isInActive: boolean;
+}
+
 export interface IUserItemProps {
-  userName: string;
-  cityName: string;
-  companyName: string;
+  user: IUser;
   isOpen: boolean;
   toggleMenu: () => void;
+  isInActive: boolean;
 }
 
 export interface IDropDownProps {
+  userId: number;
   toggleMenu: () => void;
+  isInActive: boolean;
+  delArchive: () => void;
+  addArchive: () => void;
+  delActive: () => void;
 }

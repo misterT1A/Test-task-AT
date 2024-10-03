@@ -1,11 +1,10 @@
 import { useState, type ReactElement } from 'react';
-import { useGetUsersQuery } from '../../store/apiSlice';
 
 import styles from './userList.module.scss';
 import UserItem from '../UserItem/UserItem';
+import type { IUsersList } from '../../types/types';
 
-const UsersList = (): ReactElement => {
-  const { data } = useGetUsersQuery(null);
+const UsersList = ({ users, isInActive }: IUsersList): ReactElement => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggleMenu = (index: number): void => {
@@ -15,17 +14,15 @@ const UsersList = (): ReactElement => {
   return (
     <section className={styles.wrapper}>
       <ul className={styles.list}>
-        {data &&
-          data.map((users, index) => (
-            <UserItem
-              key={users.id}
-              userName={users.name}
-              cityName={users.address.city}
-              companyName={users.company.name}
-              isOpen={openIndex === index}
-              toggleMenu={() => toggleMenu(index)}
-            />
-          ))}
+        {users.map((user, index) => (
+          <UserItem
+            key={user.id}
+            user={user}
+            isOpen={openIndex === index}
+            toggleMenu={() => toggleMenu(index)}
+            isInActive={isInActive}
+          />
+        ))}
       </ul>
     </section>
   );

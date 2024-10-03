@@ -2,12 +2,14 @@ import { configureStore } from '@reduxjs/toolkit';
 import { setupListeners } from '@reduxjs/toolkit/query';
 
 import { apiSlice } from './apiSlice';
-// import detailedReducer from './detailedSlice';
+import archiveReducer from './archiveUsers';
+import activeReducer from './activeUsers';
 
 const store = configureStore({
   reducer: {
     [apiSlice.reducerPath]: apiSlice.reducer,
-    // planets: planetsReducer,
+    archiveUsers: archiveReducer,
+    activeUsers: activeReducer,
   },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(apiSlice.middleware),
 });

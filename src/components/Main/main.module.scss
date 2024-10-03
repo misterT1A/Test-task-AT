@@ -8,6 +8,12 @@
 .wrapper {
   width: 100%;
   @include flex(center, flex-start, column);
+  gap: 33px;
+}
+
+.users_wrapper {
+  width: 100%;
+  @include flex(center, flex-start, column);
   gap: 17px;
 }
 
@@ -28,6 +34,10 @@
     padding-top: 46px;
   }
   .wrapper {
+    gap: 36px;
+  }
+
+  .users_wrapper {
     gap: 25px;
   }
 }
