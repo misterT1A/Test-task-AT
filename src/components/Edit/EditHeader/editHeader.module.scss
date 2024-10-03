@@ -1,0 +1,64 @@
+.wrapper {
+  @include flex(flex-start, flex-start, column);
+  gap: 20px;
+  width: 100%;
+  padding: 28px;
+  background-color: $color_06;
+  border-radius: 16px;
+}
+
+.image_wrapepr {
+  position: relative;
+  width: 100%;
+  padding-top: 66.66%;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.list {
+  width: 100%;
+  @include flex(flex-start, flex-start, column);
+  gap: 19px;
+}
+
+.list_item {
+  width: 100%;
+  padding-bottom: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: $color_03;
+  border-bottom: 1px solid $color_04;
+
+  &:first-child {
+    color: $color_01;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .wrapper {
+    max-width: 360px;
+    padding: 40px;
+    gap: 39px;
+  }
+
+  .image_wrapepr {
+    padding-top: 174%;
+  }
+
+  .list_item {
+    font-size: 16px;
+  }
+
+  .list {
+    gap: 26px;
+  }
+}

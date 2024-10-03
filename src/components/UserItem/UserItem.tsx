@@ -1,14 +1,13 @@
-import { useEffect, useRef, type ReactElement } from 'react';
+import classNames from 'classnames';
+import { type ReactElement, useEffect, useRef } from 'react';
 
-import styles from './userItem.module.scss';
 import ava from '../../assets/images/mainImage.jpg';
-
+import { useAppDispatch } from '../../hooks/storeHooks';
+import { addActive, deleteActive } from '../../store/activeUsers';
+import { addArchive, deleteArchive } from '../../store/archiveUsers';
 import type { IUserItemProps } from '../../types/types';
 import DropDown from '../DropDown/DropDown';
-import classNames from 'classnames';
-import { useAppDispatch } from '../../hooks/storeHooks';
-import { addArchive, deleteArchive } from '../../store/archiveUsers';
-import { addActive, deleteActive } from '../../store/activeUsers';
+import styles from './userItem.module.scss';
 
 const UserItem = ({ user, isOpen, toggleMenu, isInActive }: IUserItemProps): ReactElement => {
   const dispatch = useAppDispatch();
@@ -41,18 +40,21 @@ const UserItem = ({ user, isOpen, toggleMenu, isInActive }: IUserItemProps): Rea
     [styles.user_name_inActive]: isInActive,
   });
 
-  const addToArchive = (): void => {
+  const moveToArchive = (): void => {
     dispatch(addArchive(user));
     dispatch(deleteActive(user));
   };
 
-  const deleteFromArchive = (): void => {
+  const moveFromArchive = (): void => {
     dispatch(deleteArchive(user));
     dispatch(addActive(user));
   };
 
   const deleteFromActive = (): void => {
     dispatch(deleteActive(user));
+  };
+  const deleteFromArchive = (): void => {
+    dispatch(deleteArchive(user));
   };
 
   return (
@@ -79,9 +81,10 @@ const UserItem = ({ user, isOpen, toggleMenu, isInActive }: IUserItemProps): Rea
             userId={user.id}
             toggleMenu={toggleMenu}
             isInActive={isInActive}
-            delArchive={deleteFromArchive}
-            addArchive={addToArchive}
+            moveFromArchive={moveFromArchive}
+            moveToArchive={moveToArchive}
             delActive={deleteFromActive}
+            delArchive={deleteFromArchive}
           />
         )}
       </div>

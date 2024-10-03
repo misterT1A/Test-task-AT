@@ -1,3 +1,5 @@
+import type { Dispatch } from 'react';
+
 export interface IUser {
   id: number;
   name: string;
@@ -38,7 +40,26 @@ export interface IDropDownProps {
   userId: number;
   toggleMenu: () => void;
   isInActive: boolean;
-  delArchive: () => void;
-  addArchive: () => void;
+  moveFromArchive: () => void;
+  moveToArchive: () => void;
   delActive: () => void;
+  delArchive: () => void;
+}
+
+export interface IFormValues {
+  name: string;
+  nickName: string;
+  email: string;
+  city: string;
+  phoneNumber: string;
+  companyName: string;
+}
+
+export interface IModalProps {
+  setActive: Dispatch<React.SetStateAction<boolean>>;
+}
+
+export interface IFormProps {
+  user: IUser;
+  modalHandler: Dispatch<React.SetStateAction<boolean>>;
 }

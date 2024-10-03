@@ -1,0 +1,50 @@
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 3;
+  background-color: rgba(22, 22, 22, 0.24);
+  top: 0;
+  left: 0;
+  @include flex(center, center, column);
+}
+
+.content {
+  max-width: 271px;
+  width: 100%;
+  height: 190px;
+  padding: 8px 10px;
+  @include flex(flex-end, flex-start, column);
+  background-color: $color_06;
+  border-radius: 16px;
+}
+
+.close_button {
+  @include flex(center, center, column);
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.logo {
+  margin: 0 auto;
+  width: 60px;
+  height: 60px;
+}
+
+.text {
+  margin: auto;
+  font-size: 18px;
+  font-weight: 600;
+  color: $color_02;
+}
+
+@media screen and (min-width: 800px) {
+  .content {
+    max-width: 310px;
+    height: 210px;
+  }
+
+  .text {
+    font-size: 20px;
+  }
+}

@@ -1,8 +1,8 @@
 import type { ReactElement } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+import btnStyles from '../../UI/button/button.module.scss';
 import styles from './Error-page.module.scss';
-import btnStyles from '../../UI/button/_button.module.scss';
 
 const ErrorPage = (): ReactElement => {
   const navigate = useNavigate();

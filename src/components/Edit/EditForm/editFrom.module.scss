@@ -1,0 +1,76 @@
+.wrapper {
+  margin-top: 10px;
+  @include flex(flex-start, flex-start, column);
+  gap: 20px;
+  width: 100%;
+  padding: 28px;
+  background-color: $color_06;
+  border-radius: 16px;
+}
+
+.title {
+  width: 100%;
+  font-size: 24px;
+  font-weight: 600;
+  padding-bottom: 16px;
+  border-bottom: 1px solid $color_04;
+}
+
+.form {
+  width: 100%;
+  @include flex(flex-start, flex-start, column);
+  gap: 23px;
+}
+
+.form_label {
+  position: relative;
+  width: 100%;
+  @include flex(flex-start, flex-start, column);
+  gap: 10px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.form_imput {
+  padding: 8px 15px;
+  width: 100%;
+  font-size: 14px;
+  font-weight: 600;
+  color: $color_01;
+  border: 2px solid $color_04;
+  border-radius: 50px;
+}
+
+.form_error {
+  width: 100%;
+  position: absolute;
+  top: 101%;
+  left: 0;
+  z-index: 1;
+  color: $color_accent;
+  font-size: 15px;
+  text-align: center;
+}
+
+@media screen and (min-width: 800px) {
+  .wrapper {
+    margin-top: 0;
+    padding: 40px;
+  }
+
+  .form {
+    gap: 26px;
+  }
+
+  .form_label {
+    font-size: 18px;
+  }
+
+  .form_label {
+    width: 62%;
+  }
+
+  .form_imput {
+    font-size: 16px;
+  }
+}

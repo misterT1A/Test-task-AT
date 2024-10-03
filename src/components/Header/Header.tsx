@@ -1,10 +1,9 @@
 import type { ReactElement } from 'react';
 
+import call from '../../assets/images/call.svg';
+import like from '../../assets/images/like.svg';
 import logo from '../../assets/images/logo.svg';
 import avatar from '../../assets/images/mainImage.jpg';
-import like from '../../assets/images/like.svg';
-import call from '../../assets/images/call.svg';
-
 import styles from './header.module.scss';
 
 const Header = (): ReactElement => {

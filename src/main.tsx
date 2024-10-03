@@ -1,14 +1,16 @@
+import './index.scss';
+
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-
-import './index.scss';
-import Root from './routes/Root/Root';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import ErrorPage from './components/ErrorPage/ErrorPage';
-import NotFoundPage from './components/NotFoundPage/NotFoundPage';
 import { Provider } from 'react-redux';
-import store from './store/store';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+
+import Edit from './components/Edit/Edit';
+import ErrorPage from './components/ErrorPage/ErrorPage';
 import Main from './components/Main/Main';
+import NotFoundPage from './components/NotFoundPage/NotFoundPage';
+import Root from './routes/Root/Root';
+import store from './store/store';
 
 const router = createBrowserRouter([
   {
@@ -20,10 +22,10 @@ const router = createBrowserRouter([
         path: '/',
         element: <Main />,
       },
-      // {
-      //   path: '/edit/:id',
-      //   element: <Edit />,
-      // },
+      {
+        path: '/edit/:usertId',
+        element: <Edit />,
+      },
     ],
   },
   {

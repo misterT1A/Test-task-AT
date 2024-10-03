@@ -1,10 +1,10 @@
 import { type ReactElement } from 'react';
 
-import styles from './main.module.scss';
-import UsersList from '../UsersList/UsersList';
-
-import useGetUsers from '../../hooks/useGetUsers';
 import { useAppSelector } from '../../hooks/storeHooks';
+import useGetUsers from '../../hooks/useGetUsers';
+import Loader from '../../ui/Loader/Loader';
+import UsersList from '../UsersList/UsersList';
+import styles from './main.module.scss';
 
 const Main = (): ReactElement => {
   useGetUsers();
@@ -15,6 +15,7 @@ const Main = (): ReactElement => {
   return (
     <main className={styles.main}>
       <article className={styles.wrapper}>
+        {(!activeUsers.length || !archiveUsers) && <Loader />}
         {!!activeUsers.length && (
           <section className={styles.users_wrapper}>
             <section className={styles.title_wrapper}>

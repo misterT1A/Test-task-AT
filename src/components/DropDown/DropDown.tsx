@@ -1,11 +1,13 @@
 import { forwardRef } from 'react';
-
-import styles from './dropDown.module.scss';
-import type { IDropDownProps } from '../../types/types';
 import { NavLink } from 'react-router-dom';
 
+import type { IDropDownProps } from '../../types/types';
+import styles from './dropDown.module.scss';
+
 const DropDown = forwardRef<HTMLDivElement, IDropDownProps>((props, ref) => {
-  const archiveTogler = props.isInActive ? props.delArchive : props.addArchive;
+  const archiveTogler = props.isInActive ? props.moveFromArchive : props.moveToArchive;
+
+  const deleteTogler = props.isInActive ? props.delArchive : props.delActive;
 
   return (
     <section ref={ref} className={styles.wrapper}>
@@ -25,7 +27,7 @@ const DropDown = forwardRef<HTMLDivElement, IDropDownProps>((props, ref) => {
         <li
           onClick={() => {
             props.toggleMenu();
-            props.delActive();
+            deleteTogler();
           }}
           className={styles.text}
         >

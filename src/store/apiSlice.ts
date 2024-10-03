@@ -1,4 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+
 import type { IUser } from '../types/types';
 
 export const apiSlice = createApi({
@@ -8,7 +9,10 @@ export const apiSlice = createApi({
     getUsers: builder.query<IUser[], null>({
       query: () => `/users?_limit=6`,
     }),
+    getUser: builder.query<IUser, string>({
+      query: (userID) => `/users/${userID}`,
+    }),
   }),
 });
 
-export const { useGetUsersQuery } = apiSlice;
+export const { useGetUsersQuery, useGetUserQuery } = apiSlice;

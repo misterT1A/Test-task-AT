@@ -1,9 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { setupListeners } from '@reduxjs/toolkit/query';
 
+import activeReducer from './activeUsers';
 import { apiSlice } from './apiSlice';
 import archiveReducer from './archiveUsers';
-import activeReducer from './activeUsers';
 
 const store = configureStore({
   reducer: {

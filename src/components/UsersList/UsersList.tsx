@@ -1,8 +1,8 @@
-import { useState, type ReactElement } from 'react';
+import { type ReactElement, useState } from 'react';
 
-import styles from './userList.module.scss';
-import UserItem from '../UserItem/UserItem';
 import type { IUsersList } from '../../types/types';
+import UserItem from '../UserItem/UserItem';
+import styles from './userList.module.scss';
 
 const UsersList = ({ users, isInActive }: IUsersList): ReactElement => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
