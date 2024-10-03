@@ -5,13 +5,16 @@ body {
   font-family: 'Manrope', sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
+  @include flex(center, flex-start, column);
   background-color: $color_05;
   font-size: 14px;
   width: 100%;
+  min-height: 100vh;
 }
 
 #root {
-  @include flex(flex-start, center, row);
+  @include flex(center, flex-start, column);
+  flex: 1;
   width: 100%;
   width: 100%;
 }

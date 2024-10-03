@@ -5,7 +5,7 @@
 
 .wrapper {
   margin: auto;
-  max-width: 1470px;
+  max-width: 1160px;
   width: 100%;
   padding: 11px 15px;
   @include flex(center, space-between, row);
@@ -69,7 +69,12 @@
 
 @media screen and (min-width: 800px) {
   .wrapper {
-    padding: 14px 15px;
+    padding: 11px;
+  }
+
+  .ava_wrapper {
+    width: 20px;
+    height: 20px;
   }
 
   .user_btns_wrapper {
@@ -78,5 +83,6 @@
 
   .user_name {
     display: inline;
+    padding-right: 5px;
   }
 }
