@@ -6,6 +6,7 @@
 }
 
 .wrapper {
+  margin-top: 20px;
   width: 100%;
   @include flex(flex-start, flex-start, column);
   gap: 20px;
@@ -31,7 +32,6 @@
 
 .back_text {
   font-size: 16px;
-  font-weight: 600;
   color: $color_02;
 }
 
@@ -40,6 +40,7 @@
     flex-direction: row;
     padding: 0 15px;
     gap: 40px;
+    margin-top: 0;
   }
   .main {
     padding: 10px 0;

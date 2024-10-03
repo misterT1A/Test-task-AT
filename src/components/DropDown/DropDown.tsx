@@ -1,7 +1,8 @@
 import { forwardRef } from 'react';
 import { NavLink } from 'react-router-dom';
 
-import type { IDropDownProps } from '../../types/types';
+import type { IDropDownProps } from '@/types/types';
+
 import styles from './dropDown.module.scss';
 
 const DropDown = forwardRef<HTMLDivElement, IDropDownProps>((props, ref) => {

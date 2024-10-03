@@ -1,7 +1,8 @@
 import { useEffect } from 'react';
 
-import { addUsers } from '../store/activeUsers';
-import { useGetUsersQuery } from '../store/apiSlice';
+import { addUsers } from '@/store/activeUsers';
+import { useGetUsersQuery } from '@/store/apiSlice';
+
 import { useAppDispatch } from './storeHooks';
 
 const useGetUsers = (): void => {

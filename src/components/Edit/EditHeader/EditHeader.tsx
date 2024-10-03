@@ -1,6 +1,7 @@
 import type { ReactElement } from 'react';
 
-import image from '../../../assets/images/mainImage.jpg';
+import image from '@/assets/images/mainImage.jpg';
+
 import styles from './editHeader.module.scss';
 
 const EditHeader = (): ReactElement => {

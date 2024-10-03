@@ -1,11 +1,12 @@
 import classNames from 'classnames';
 import { type ReactElement, useEffect, useRef } from 'react';
 
-import ava from '../../assets/images/mainImage.jpg';
-import { useAppDispatch } from '../../hooks/storeHooks';
-import { addActive, deleteActive } from '../../store/activeUsers';
-import { addArchive, deleteArchive } from '../../store/archiveUsers';
-import type { IUserItemProps } from '../../types/types';
+import ava from '@/assets/images/mainImage.jpg';
+import { useAppDispatch } from '@/hooks/storeHooks';
+import { addActive, deleteActive } from '@/store/activeUsers';
+import { addArchive, deleteArchive } from '@/store/archiveUsers';
+import type { IUserItemProps } from '@/types/types';
+
 import DropDown from '../DropDown/DropDown';
 import styles from './userItem.module.scss';
 

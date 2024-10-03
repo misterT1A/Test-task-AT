@@ -1,8 +1,9 @@
 import { type ReactElement } from 'react';
 
-import { useAppSelector } from '../../hooks/storeHooks';
-import useGetUsers from '../../hooks/useGetUsers';
-import Loader from '../../ui/Loader/Loader';
+import { useAppSelector } from '@/hooks/storeHooks';
+import useGetUsers from '@/hooks/useGetUsers';
+import Loader from '@/ui/Loader/Loader';
+
 import UsersList from '../UsersList/UsersList';
 import styles from './main.module.scss';
 

@@ -21,8 +21,11 @@ const archiveSlice = createSlice({
     deleteArchive(state, action: PayloadAction<IUser>) {
       state.archiveUsers = state.archiveUsers.filter((user) => user.id !== action.payload.id);
     },
+    deleteAllArchives(state) {
+      state.archiveUsers = [];
+    },
   },
 });
 
-export const { addArchive, deleteArchive } = archiveSlice.actions;
+export const { addArchive, deleteArchive, deleteAllArchives } = archiveSlice.actions;
 export default archiveSlice.reducer;

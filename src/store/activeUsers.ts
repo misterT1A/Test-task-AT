@@ -24,8 +24,11 @@ const activeSlice = createSlice({
     deleteActive(state, action: PayloadAction<IUser>) {
       state.activeUsers = state.activeUsers.filter((user) => user.id !== action.payload.id);
     },
+    deleteAllActive(state) {
+      state.activeUsers = [];
+    },
   },
 });
 
-export const { addActive, deleteActive, addUsers } = activeSlice.actions;
+export const { addActive, deleteActive, addUsers, deleteAllActive } = activeSlice.actions;
 export default activeSlice.reducer;

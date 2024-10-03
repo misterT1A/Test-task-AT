@@ -18,14 +18,13 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "types": ["@testing-library/jest-dom"],
     /* Absolute Imports */
     "baseUrl": "./",
     "paths": {
-      "@/Assets/*": ["*", "src/*"],
-      "@/Components/*": ["*", "src/Components/*"],
-      "@/*": ["./src/*"]
+      "@/Assets/*": ["src/Assets/*"],
+      "@/Components/*": ["src/Components/*"],
+      "@/*": ["src/*"]
     }
   },
-  "include": ["src", "vite.config.ts", "jest.config.cjs"]
+  "include": ["src", "vite.config.ts"]
 }

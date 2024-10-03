@@ -2,10 +2,11 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { type ReactElement, useEffect } from 'react';
 import { useForm, useFormState } from 'react-hook-form';
 
-import sendEditUser from '../../../services/sendEditUser';
-import type { IFormProps, IFormValues, IUser } from '../../../types/types';
-import buttonStyles from '../../../ui/Button/button.module.scss';
-import validationSchema from '../../../utils/validations';
+import sendEditUser from '@/services/sendEditUser';
+import type { IFormProps, IFormValues, IUser } from '@/types/types';
+import buttonStyles from '@/ui/Button/button.module.scss';
+import validationSchema from '@/utils/validations';
+
 import styles from './editFrom.module.scss';
 
 const EditForm = ({ user, modalHandler }: IFormProps): ReactElement => {
@@ -51,8 +52,7 @@ const EditForm = ({ user, modalHandler }: IFormProps): ReactElement => {
       },
     };
     const response = await sendEditUser(userData as IUser);
-    modalHandler(true);
-    console.log(response);
+    if (response) modalHandler(true);
   };
 
   return (

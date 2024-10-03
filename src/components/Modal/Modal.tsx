@@ -1,8 +1,9 @@
 import { type ReactElement, useEffect } from 'react';
 
-import close from '../../assets/images/close-img.svg';
-import logo from '../../assets/images/modal-img.svg';
-import type { IModalProps } from '../../types/types';
+import close from '@/assets/images/close-img.svg';
+import logo from '@/assets/images/modal-img.svg';
+import type { IModalProps } from '@/types/types';
+
 import styles from './modal.module.scss';
 
 const Modal = ({ setActive }: IModalProps): ReactElement => {

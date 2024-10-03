@@ -1,6 +1,7 @@
 import { type ReactElement, useState } from 'react';
 
-import type { IUsersList } from '../../types/types';
+import type { IUsersList } from '@/types/types';
+
 import UserItem from '../UserItem/UserItem';
 import styles from './userList.module.scss';
 
