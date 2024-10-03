@@ -1,0 +1,82 @@
+.header {
+  width: 100%;
+  background-color: $color_06;
+}
+
+.wrapper {
+  margin: auto;
+  max-width: 1470px;
+  width: 100%;
+  padding: 11px 15px;
+  @include flex(center, space-between, row);
+}
+
+.logo_wrapper {
+  @include flex(center, center, row);
+  gap: 8px;
+}
+
+.logo {
+  width: 24px;
+  height: auto;
+}
+
+.logo_title_part1 {
+  font-family: 'Inter', sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.logo_title_part2 {
+  font-family: 'Inter', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.right_block_wrapper {
+  @include flex(center, space-between, row);
+  gap: 20px;
+}
+
+.user_wrapper {
+  @include flex(center, space-between, row);
+  gap: 8px;
+}
+
+.ava_wrapper {
+  @include flex(center, space-between, row);
+  width: 28px;
+  height: 28px;
+  border-radius: 100%;
+  overflow: hidden;
+}
+
+.user_btns_wrapper {
+  @include flex(center, space-between, row);
+  gap: 4px;
+  display: none;
+}
+
+.avatar {
+  width: 28px;
+  height: auto;
+}
+
+.user_name {
+  font-size: 16px;
+  display: none;
+}
+
+@media screen and (min-width: 800px) {
+  .wrapper {
+    padding: 14px 15px;
+  }
+
+  .user_btns_wrapper {
+    display: flex;
+  }
+
+  .user_name {
+    display: inline;
+  }
+}

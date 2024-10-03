@@ -1,10 +1,13 @@
 import type { ReactElement } from 'react';
 
+// import styles from './root.module.scss';
+import Header from '../../components/Header/Header';
+
 const Root = (): ReactElement => {
   return (
-    <div>
-      <h1>Root</h1>
-    </div>
+    <>
+      <Header />
+    </>
   );
 };
 

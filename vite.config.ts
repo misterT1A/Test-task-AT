@@ -7,7 +7,12 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        api: 'modern-compiler',
+        additionalData: `
+        @import "./src/styles/_vars.scss";
+        @import "./src/styles/_mixins.scss";
+        @import "./src/styles/_globals.scss";
+        `,
+        silenceDeprecations: ['legacy-js-api'],
       },
     },
   },
